@@ -1,11 +1,8 @@
 (()=> {
     function solution(arr) {
         let answer;
-        let sum = 0;
-        for(let i = 0; i<arr.length; i++) {
-            sum = sum + arr[i];
-        }
-        console.log(sum);
+        let sum = arr.reduce((a, b) => a + b);
+        
 
         for(let i = 0; i<arr.length; i++) {
             for(let j = i + 1; j<arr.length; j++) {
