@@ -8,7 +8,7 @@
             for(let j = i + 1; j<arr.length; j++) {
                 if((sum - (arr[i] + arr[j])) === 100) {
                     arr.splice(i, 1);
-                    arr.splice(j, 1);
+                    arr.splice(j - 1, 1);
                     break;
                 }
                 break;
