@@ -27,6 +27,20 @@
     return answer;
 }
 
+    function solution2(n, arr) {
+        let answer=[];
+
+        for(let i of arr) {
+            let res = 0;
+            while(i) {
+                let temp = i % 10;
+                res = res * 10 + temp;
+                i = parseInt(i / 10);
+            }
+            if(isPrime(res)) answer.push(res);
+        }
+    }
+
     console.log(solution(9, [32,55,62,20,250,370,200,30,100]));
 })();
 
