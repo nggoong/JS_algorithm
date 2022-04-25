@@ -11,10 +11,12 @@
                 stack.push(Number(i));
             }
             else if(isNaN(i)) {
-                if(i === '+') result = stack.pop() + stack.pop();
-                else if(i === '-') result = stack.pop() - stack.pop();
-                else if(i === '*') result = stack.pop() * stack.pop();
-                else if(i === '/') result = stack.pop() / stack.pop();
+                let rt = stack.pop();
+                let lt = stack.pop();
+                if(i === '+') result = lt + rt;
+                else if(i === '-') result = lt - rt
+                else if(i === '*') result = lt * rt;
+                else if(i === '/') result = lt / rt;
 
                 stack.push(Number(result));
             }
