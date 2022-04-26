@@ -19,5 +19,25 @@
         return answer;
     }
 
+    // 스택으로 푸는 방법
+
+    function solution2(need, subjects) {
+        let answer = 'YES';
+        let stack = need.split('').reverse();
+
+        for(let i of subjects) {
+            if(stack.includes(i)) {
+                if(stack.pop() !== i) {
+                    answer = 'NO';
+                    return answer;
+                }
+            }
+        }
+        if(stack.length !== 0) answer='NO';
+
+        return answer;
+    }
+
     console.log(solution('CBA', 'CBHGEA'));
+    console.log(solution2('CBA', 'CBHGEA'));
 })();
