@@ -29,13 +29,30 @@
                 check[index] = 0;
                 DFS(index + 1);
             } 
-
         }
-
         DFS(0);
+        return answer;
+    }
+
+    function solution2(num, arr) {
+        let answer = -1;
+
+        function DFS(l, sum) {
+            if(sum > num) return;
+            if(l === arr.length) {
+                answer = Math.max(sum, answer);
+            }
+            else {
+                DFS(l + 1, sum + arr[l]);
+                DFS(l + 1, sum);
+            }
+        }
+        DFS(0, 0);
+
         return answer;
     }
 
     let arr=[81, 58, 42, 33, 61];
     console.log(solution(259, arr));
+    console.log(solution2(259, arr));
 })();
